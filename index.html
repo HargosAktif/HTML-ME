@@ -8,79 +8,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Authentication Required</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  background:linear-gradient(135deg,#0b0d12 0%,#141820 50%,#0b0d12 100%);
-  color:#b0b8c8;font-family:'Inter','Segoe UI',monospace;
-  height:100vh;display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden
+  background:#0f1115;
+  color:#b0b8c8;
+  font-family:Inter,Segoe UI,monospace;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-body::before{
-  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
-  background:radial-gradient(circle at 30% 50%,rgba(30,60,120,0.08) 0%,transparent 50%),
-             radial-gradient(circle at 70% 50%,rgba(30,60,120,0.05) 0%,transparent 50%);
-  pointer-events:none
-}
+
 .login-wrapper{
-  background:rgba(18,22,30,0.92);
-  backdrop-filter:blur(20px);
-  border:1px solid rgba(60,80,120,0.2);
-  border-radius:16px;padding:50px 44px 44px;width:380px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.03);
-  position:relative;z-index:1
+  background:#151922;
+  border:1px solid #232a3a;
+  border-radius:10px;
+  padding:40px;
+  width:360px;
 }
+
 .badge{
-  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-  background:rgba(220,50,50,0.12);border:1px solid rgba(220,50,50,0.25);
-  border-radius:20px;padding:4px 16px;font-size:10px;color:rgba(220,80,80,0.7);
-  letter-spacing:3px;text-transform:uppercase;font-weight:600
+  text-align:center;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#8a93a8;
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
+
 h1{
-  color:#c8d0e0;font-size:13px;font-weight:500;text-transform:uppercase;
-  letter-spacing:6px;margin-bottom:6px;text-align:center
+  font-size:13px;
+  text-align:center;
+  letter-spacing:4px;
+  margin-bottom:6px;
+  font-weight:500;
 }
-.sub{text-align:center;font-size:11px;color:#4a5568;font-weight:300;margin-bottom:32px}
-.input-group{margin-bottom:18px}
+
+.sub{
+  text-align:center;
+  font-size:11px;
+  color:#6a7285;
+  margin-bottom:25px;
+}
+
+.input-group{margin-bottom:14px}
+
 label{
-  font-size:10px;color:#5a6a8a;text-transform:uppercase;letter-spacing:2px;
-  display:block;margin-bottom:6px;font-weight:500
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:6px;
+  color:#7a8396;
 }
+
 input{
-  width:100%;background:rgba(10,14,22,0.6);border:1px solid rgba(60,80,120,0.15);
-  border-radius:10px;color:#c8d0e0;padding:12px 14px;
-  font-family:'Inter',monospace;font-size:14px;outline:none;
-  transition:border-color 0.2s,box-shadow 0.2s
+  width:100%;
+  background:#0f131b;
+  border:1px solid #2a3244;
+  border-radius:6px;
+  color:#cfd6e6;
+  padding:10px;
+  outline:none;
 }
-input:focus{border-color:rgba(80,120,200,0.3);box-shadow:0 0 0 3px rgba(60,100,180,0.08);color:#e0e8f0}
-input::placeholder{color:#2a3450;font-size:12px}
-.btn-group{display:flex;gap:10px;margin-top:6px}
+
+input:focus{
+  border-color:#3a4a66;
+}
+
 button{
-  flex:1;background:rgba(40,60,100,0.15);border:1px solid rgba(60,80,120,0.2);
-  border-radius:10px;color:#7888a8;padding:12px;font-size:11px;
-  text-transform:uppercase;letter-spacing:3px;cursor:pointer;
-  transition:all 0.2s;font-weight:500;font-family:'Inter',monospace
+  width:100%;
+  margin-top:10px;
+  background:#1b2230;
+  border:1px solid #2a3244;
+  color:#9aa6bd;
+  padding:10px;
+  border-radius:6px;
+  cursor:pointer;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:11px;
 }
-button:hover{background:rgba(50,80,140,0.25);border-color:rgba(80,120,200,0.3);color:#a0b0d0}
-button:active{transform:scale(0.97)}
+
+button:hover{
+  background:#222b3c;
+}
+
 #message{
-  font-size:11px;margin-top:16px;min-height:18px;text-align:center;
-  font-weight:400;transition:all 0.3s;padding:8px;border-radius:8px
+  font-size:11px;
+  margin-top:12px;
+  text-align:center;
+  min-height:16px;
 }
+
 .success-bg{
-  background:rgba(40,80,60,0.15);border:1px solid rgba(60,140,100,0.2)
+  color:#60c090;
 }
+
 .error-bg{
-  background:rgba(80,40,40,0.15);border:1px solid rgba(140,60,60,0.2)
+  color:#c06060;
 }
-.divider{height:1px;background:rgba(60,80,120,0.08);margin:20px 0 0}
-.footer{text-align:center;font-size:9px;color:#2a3450;margin-top:12px;letter-spacing:1px}
+
+.divider{
+  height:1px;
+  background:#232a3a;
+  margin-top:18px;
+}
+
+.footer{
+  text-align:center;
+  font-size:9px;
+  color:#5a6275;
+  margin-top:10px;
+  letter-spacing:1px;
+}
 </style>
 </head>
 <body>
 
-  <!-- Okey you won. Im sorry :c -->
+<!-- Okey you won. Im sorry :c -->
 
 <!-- 
     SECURITY STRUCTURE:
@@ -88,7 +134,7 @@ button:active{transform:scale(0.97)}
     Username: hidden in the system image (LSB steganography).
     Image: /assets/bg.png (not the background; requires analysis)
 -->
-  
+
 <div class="login-wrapper">
 <div class="badge">restricted access</div>
 <h1>authentication required</h1>
@@ -104,9 +150,7 @@ button:active{transform:scale(0.97)}
 <input type="password" id="password" placeholder="enter password" autocomplete="off" spellcheck="false">
 </div>
 
-<div class="btn-group">
 <button onclick="auth()">authenticate</button>
-</div>
 
 <div id="message"></div>
 <div class="divider"></div>
@@ -117,27 +161,34 @@ button:active{transform:scale(0.97)}
 (function(){
     const targetPass = String(Math.floor(Math.random() * 1000000)).padStart(6, '0');
     const userHash = "5f4dcc3b5aa765d61d8327deb882cf99";
+
     window.auth = function() {
         const u = document.getElementById("username").value.toLowerCase().trim();
         const p = document.getElementById("password").value.trim();
         const m = document.getElementById("message");
         m.className = "";
-        
+
         if (u === "laxent" && p === targetPass) {
             m.textContent = "welcome, laxent";
-            m.style.color = "#60c090";
             m.className = "success-bg";
+
             setTimeout(() => {
-                document.body.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg,#0b0d12,#141820);color:#60c090;font-family:Inter,monospace"><div style="font-size:28px;letter-spacing:3px;text-transform:uppercase;font-weight:300;margin-bottom:20px">welcome, laxent</div><div style="color:#4a5568;font-size:12px;letter-spacing:2px">flag{brute_force_master_laxent_' + targetPass + '}</div></div>';
+                document.body.innerHTML =
+                '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#0f1115;color:#60c090;font-family:Inter,monospace"><div style="font-size:28px;letter-spacing:3px;text-transform:uppercase;font-weight:300;margin-bottom:20px">welcome, laxent</div><div style="color:#6a7285;font-size:12px;letter-spacing:2px">flag{brute_force_master_laxent_' + targetPass + '}</div></div>';
             }, 500);
+
         } else {
             m.textContent = "invalid credentials";
-            m.style.color = "#c06060";
             m.className = "error-bg";
             setTimeout(() => { m.textContent = ""; m.className = ""; }, 2000);
         }
     };
+
+    document.addEventListener("keydown", function(e){
+        if(e.key === "Enter") auth();
+    });
 })();
 </script>
+
 </body>
 </html>
